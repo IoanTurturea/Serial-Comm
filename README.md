@@ -1,6 +1,6 @@
 # Serial-Comm
 
-A application made for general serial UART communication. 
+An application made for general serial (UART) communication. 
 
 The app can read and send data on serial interpreted as:
 string, int(decimal), int(hex), int(binary)
