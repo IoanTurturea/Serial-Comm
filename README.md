@@ -8,4 +8,5 @@ The communication is fully configurable from the GUI.
 In background Log file is filling with all the communication datas.
 Also the user can save prefered configurations for future use.
 
-GUI made with Windows Forms. Although now I prefer WPF.
+GUI made with Windows Forms, using .NET and C#. 
+Although now I prefer WPF.
