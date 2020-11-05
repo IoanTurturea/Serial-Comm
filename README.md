@@ -10,3 +10,4 @@ Also the user can save prefered configurations for future use.
 
 GUI made with Windows Forms, using .NET and C#. 
 Although now I prefer WPF.
+Try it by downloading and running the Setup.exe file.
