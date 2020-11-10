@@ -48,14 +48,13 @@ namespace SerialCommunication_C_Sharf_
                 int bytes = Global.GlobalVar.BytesToRead;
                 buffer = new byte[bytes];
                 Global.GlobalVar.Read(buffer, 0, bytes); // argument list: array buffer, offset, count
-                string ceva = "";
+                string temp = "";
                 foreach(byte b in buffer)
                 {
-                    ceva += b.ToString("X") + " ";
+                    temp += b.ToString("X") + " ";
                 }
-                Global.AppendToFile(String.Format("RECEIVED {0}bytes: {1}", bytes , ceva));
-                Invoke(new EventHandler(ShowData));  // it is a function that interprets the input data based on the selected device. May be the problem!
-                //Invoke(new EventHandler(CheckData));
+                Global.AppendToFile(String.Format("RECEIVED {0}bytes: {1}", bytes , temp));
+                Invoke(new EventHandler(ShowData));
             }
             catch (Exception err)
             {
@@ -68,7 +67,13 @@ namespace SerialCommunication_C_Sharf_
         */
         private void ShowData(object sender, EventArgs e)
         {
-            // urmatoarele 2 linii de mai jos le-am introdus pentru ca textbox-ul sa coboare cu informatiile primite
+            string temp = "";
+            foreach(byte b in buffer)
+            {
+                temp += b.ToString("X") + " ";
+            }
+            
+            tBoxDataIN.Text += temp;
             tBoxDataIN.SelectionStart = tBoxDataIN.TextLength;
             tBoxDataIN.ScrollToCaret();
             Global.Blink(lblReceivedLED);
